@@ -1,0 +1,3 @@
+mercado = []
+while True:
+    select: input("Selecione uma opção\n (a)pagar (i)nserir (l)istar: ")
