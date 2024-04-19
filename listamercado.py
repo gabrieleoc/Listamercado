@@ -30,16 +30,19 @@ while True:
         os.system('cls')
         for indice, nome in enumerate(compras):
             print(indice, nome)
-        apagar = int(input('O que deseja apagar? '))
+        apagar = input('O que deseja apagar? ')
         
         #nao deixar usuario quebrar o programa por conta do indice
         try:
-          if apagar <= len(compras):
-              del compras[apagar]
-              continue
-        except:
-            print('Indice nao existente, por favor recomece.')
-            continue
+            indice = int(apagar)
+            del compras[indice]
+        except ValueError:
+            print('Por favor digite número int.')
+        except IndexError:
+            print('Índice não existe na lista')
+        except Exception:
+            print('Erro desconhecido')
+            
     elif select == 'l':
         os.system('cls')
         for indice, nome in enumerate(compras):
